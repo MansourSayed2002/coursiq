@@ -11,10 +11,7 @@ lib/
  ├── core/
  ├── features/
  │    ├── auth/
- │    ├── home/
- │    ├── course_details/
- │    ├── my_courses/
- │    └── profile/
+ ├── coursiq_app.dart
  ├── main.dart
 
  ## 📱 Screens
