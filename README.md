@@ -1,23 +1,20 @@
 # 🚀 Coursiq – Modern E-Learning Platform
 
-###Coursiq is a premium online learning mobile application built with Flutter.
+### Coursiq is a premium online learning mobile application built with Flutter.
 It provides a modern, scalable, and clean architecture solution for displaying and managing online courses with a high-quality user experience.
 
-##🏗 Architecture
+## 🏗 Architecture
 
-###This project is structured using Clean Architecture:
+### This project is structured using Clean Architecture:
 
 lib/
  ├── core/
  ├── features/
  │    ├── auth/
- │    ├── home/
- │    ├── course_details/
- │    ├── my_courses/
- │    └── profile/
+ ├── coursiq_app.dart
  ├── main.dart
 
- ##📱 Screens
+ ## 📱 Screens
  
 ![Splash Screen](screenshots/splashscreen.jpg)
 ![Login Screen](screenshots/login.jpg)
