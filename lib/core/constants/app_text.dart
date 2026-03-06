@@ -20,4 +20,6 @@ class AppText {
   static const String fullName = "Full Name";
   static const String alreadyHaveAccount = "Already have an account? ";
   static const String hintFullName = "Enter your full name";
+  static const String transactionSuccess =
+      'Transaction Completed Successfully!';
 }

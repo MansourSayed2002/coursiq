@@ -1,15 +1,13 @@
 import 'dart:ui';
 import 'package:coursiq/core/constants/app_text.dart';
-import 'package:coursiq/core/widget/custom_elevated_button.dart';
 import 'package:coursiq/features/auth/presentation/widget/other_login_widget.dart';
 import 'package:coursiq/features/auth/presentation/widget/text_form_filed_sign_up_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gap/flutter_gap.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gap/gap.dart';
 
 class InputsBodySignUpWidget extends StatelessWidget {
   const InputsBodySignUpWidget({super.key});
-
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -27,15 +25,6 @@ class InputsBodySignUpWidget extends StatelessWidget {
           child: Column(
             children: [
               TextFormFiledSignUpWidget(),
-              Gap(32.0.h),
-              SizedBox(
-                width: double.infinity,
-                height: 60.0.h,
-                child: CustomElevatedButton(
-                  title: AppText.createAccount,
-                  onTap: () {},
-                ),
-              ),
               Gap(20.0.h),
               OtherLoginWidget(label: AppText.signUpWithGoogle),
             ],

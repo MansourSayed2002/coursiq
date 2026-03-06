@@ -3,7 +3,7 @@ import 'package:coursiq/core/constants/app_text.dart';
 import 'package:coursiq/core/theme/app_color.dart';
 import 'package:coursiq/core/theme/app_textstyle.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gap/flutter_gap.dart';
+import 'package:gap/gap.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OtherLoginWidget extends StatelessWidget {
