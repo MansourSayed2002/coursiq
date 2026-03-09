@@ -13,9 +13,9 @@ class _MainScreenState extends State<MainScreen> {
   int currentIndex = 0;
   List<Widget> screens = [
     HomeScreen(),
+    Center(child: Text("search")),
     Center(child: Text("data")),
     Center(child: Text("data2")),
-    Center(child: Text("data3")),
   ];
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,6 @@ class _MainScreenState extends State<MainScreen> {
             currentIndex = value;
           });
         },
-        
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.dashboard_outlined, color: AppColor.greyColor64),
@@ -41,19 +40,19 @@ class _MainScreenState extends State<MainScreen> {
             label: "Home",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.dashboard_outlined, color: AppColor.greyColor64),
-            activeIcon: Icon(Icons.dashboard, color: AppColor.accentColor),
-            label: "Home",
+            icon: Icon(Icons.search_outlined, color: AppColor.greyColor64),
+            activeIcon: Icon(Icons.search, color: AppColor.accentColor),
+            label: "search",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.dashboard_outlined, color: AppColor.greyColor64),
-            activeIcon: Icon(Icons.dashboard, color: AppColor.accentColor),
-            label: "Home",
+            icon: Icon(Icons.school_outlined, color: AppColor.greyColor64),
+            activeIcon: Icon(Icons.school, color: AppColor.accentColor),
+            label: "My Courses",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.dashboard_outlined, color: AppColor.greyColor64),
-            activeIcon: Icon(Icons.dashboard, color: AppColor.accentColor),
-            label: "Home",
+            icon: Icon(Icons.person_2_outlined, color: AppColor.greyColor64),
+            activeIcon: Icon(Icons.person_2, color: AppColor.accentColor),
+            label: "Profile",
           ),
         ],
       ),

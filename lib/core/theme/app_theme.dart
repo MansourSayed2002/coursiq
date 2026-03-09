@@ -17,9 +17,10 @@ class AppTheme {
         fontSize: 18.0.sp,
       ),
     ),
+
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: Color(0xFF1C1C1E),
-      
+
       selectedItemColor: AppColor.accentColor,
       unselectedItemColor: AppColor.greyColor64,
       selectedLabelStyle: TextStyle(

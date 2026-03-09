@@ -7,7 +7,6 @@ import 'package:coursiq/core/network/supabase.dart';
 import 'package:coursiq/features/home/data/model/banner_model.dart';
 import 'package:coursiq/features/home/data/model/categories_model.dart';
 import 'package:coursiq/features/home/data/model/recommended_courses_model.dart';
-import 'package:flutter/material.dart';
 
 class HomeRepo {
   Future<ApiResult> getCategories() async {
@@ -15,8 +14,6 @@ class HomeRepo {
       var result = await AppSupabase.supabase.client
           .from(DatabaseTable.categories)
           .select();
-      log(Icons.palette.codePoint.toString());
-      log(Icons.code.codePoint.toString());
       return ApiSuccess(
         data: result.map((e) => CategoriesModel.fromJson(e)).toList(),
         statusRequest: StatusRequest.success,
@@ -59,7 +56,6 @@ class HomeRepo {
       List result = await AppSupabase.supabase.client
           .from(DatabaseTable.banner)
           .select();
-      log(result.toString());
       if (result.isEmpty) {
         return ApiFailure(
           message: "No Banner",

@@ -27,12 +27,12 @@ class HomeScreen extends StatelessWidget {
           preferredSize: Size.fromHeight(70.0.h),
           child: CustomAppbarWidget(),
         ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          shape: CircleBorder(),
-          backgroundColor: AppColor.accentColor,
-          child: Icon(Icons.search, color: AppColor.white),
-        ),
+        // floatingActionButton: FloatingActionButton(
+        //   onPressed: () {},
+        //   shape: CircleBorder(),
+        //   backgroundColor: AppColor.accentColor,
+        //   child: Icon(Icons.search, color: AppColor.white),
+        // ),
         body: Padding(
           padding: .symmetric(horizontal: 15.0.w, vertical: 15.0.h),
           child: ListView(

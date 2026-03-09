@@ -25,4 +25,11 @@ class AppText {
   static const String recommendedForYou = "Recommended for You";
   static const String viewAll = "View All";
   static const String exploreCategories = "Explore Categories";
+  static const String courseDetails = "Course Details";
+  static const String instractor = "Instractor";
+  static const String follow = "Follow";
+  static const String aboutCourse = "About Course";
+  static const String contentCourse = "Content Course";
+  static const String price = "Price";
+  static const String enrolnNow = "Enroll Now";
 }
