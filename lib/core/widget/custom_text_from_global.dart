@@ -54,6 +54,7 @@ class CustomTextFormGlobal extends StatelessWidget {
       decoration: InputDecoration(
         suffixIcon: suffixIcon,
         prefixIcon: prefixIcon,
+        contentPadding: .symmetric(horizontal: 15.0.w),
         filled: true,
         fillColor: AppColor.fullColor,
         labelText: labelText,

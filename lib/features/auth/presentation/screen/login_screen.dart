@@ -1,12 +1,12 @@
-import 'dart:developer';
-
 import 'package:coursiq/core/di/di.dart';
 import 'package:coursiq/core/extension/navigator_app.dart';
 import 'package:coursiq/core/function/loading_widget.dart';
+import 'package:coursiq/core/helper/local_storage.dart';
 import 'package:coursiq/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:coursiq/features/auth/presentation/widget/donot_have_account_widget.dart';
 import 'package:coursiq/features/auth/presentation/widget/inputs_body_widget.dart';
 import 'package:coursiq/features/auth/presentation/widget/well_come_widget.dart';
+import 'package:coursiq/features/home/presentation/screen/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -27,7 +27,8 @@ class LoginScreen extends StatelessWidget {
           listener: (context, state) async {
             if (state is AuthSuccess) {
               context.pop();
-              log("success");
+              LocalStorageApp.saveData("step", "1");
+              context.pushRepalceMent(HomeScreen());
             } else if (state is AuthLoading) {
               await loadingWidget(context);
             } else if (state is AuthErrors) {

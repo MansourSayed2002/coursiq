@@ -1,5 +1,6 @@
 import 'package:coursiq/core/constants/app_text.dart';
 import 'package:coursiq/core/di/di.dart';
+import 'package:coursiq/core/enum/field_type.dart';
 import 'package:coursiq/core/function/validation.dart';
 import 'package:coursiq/core/theme/app_color.dart';
 import 'package:coursiq/core/theme/app_textstyle.dart';
@@ -54,7 +55,7 @@ class _TextFormFiledSignUpWidgetState extends State<TextFormFiledSignUpWidget> {
               color: AppColor.greyColor64,
             ),
             validator: (value) {
-              return validationField(context, "text", 8, 20, value);
+              return validationField(context, FieldType.text, 8, 20, value);
             },
           ),
         ),
@@ -72,7 +73,7 @@ class _TextFormFiledSignUpWidgetState extends State<TextFormFiledSignUpWidget> {
             hinttext: AppText.hintEmail,
             prefixIcon: Icon(Icons.email_outlined, color: AppColor.greyColor64),
             validator: (value) {
-              return validationField(context, "email", 8, 50, value);
+              return validationField(context, FieldType.email, 8, 50, value);
             },
           ),
         ),
@@ -104,7 +105,7 @@ class _TextFormFiledSignUpWidgetState extends State<TextFormFiledSignUpWidget> {
               ),
             ),
             validator: (value) {
-              return validationField(context, "number", 8, 20, value);
+              return validationField(context, FieldType.password, 8, 20, value);
             },
           ),
         ),

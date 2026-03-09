@@ -22,4 +22,7 @@ class AppText {
   static const String hintFullName = "Enter your full name";
   static const String transactionSuccess =
       'Transaction Completed Successfully!';
+  static const String recommendedForYou = "Recommended for You";
+  static const String viewAll = "View All";
+  static const String exploreCategories = "Explore Categories";
 }
