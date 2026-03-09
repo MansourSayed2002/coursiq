@@ -11,6 +11,10 @@ lib/
  ├── core/
  ├── features/
  │    ├── auth/
+ │    ├── details/
+ │    ├── home/
+ │    ├── main/
+ │    ├── intro/
  ├── coursiq_app.dart
  ├── main.dart
 
@@ -19,4 +23,10 @@ lib/
 ![Splash Screen](screenshots/splashscreen.jpg)
 ![Login Screen](screenshots/login.jpg)
 ![Signup Screen](screenshots/signup.jpg)
+![Signup Screen](screenshots/home.jpg)
+![Signup Screen](screenshots/details1.jpg)
+![Signup Screen](screenshots/details2.jpg)
+![Signup Screen](screenshots/details3.jpg)
+
+
 
