@@ -4,8 +4,10 @@ import 'package:coursiq/core/constants/database_table.dart';
 import 'package:coursiq/core/enum/status_request.dart';
 import 'package:coursiq/core/handle_errors/api_result.dart';
 import 'package:coursiq/core/network/supabase.dart';
+import 'package:coursiq/features/details/data/model/input_subscription.dart';
 import 'package:coursiq/features/details/data/model/moduls_model.dart';
 import 'package:coursiq/features/details/data/model/video_model.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 class DetailsRepo {
   Future<ApiResult> getDetailscourses(int targetId) async {
@@ -49,6 +51,35 @@ class DetailsRepo {
         data: result.map((e) => VideoModel.fromJson(e)).toList(),
         statusRequest: StatusRequest.success,
       );
+    } catch (e) {
+      log(e.toString());
+      return ApiFailure(
+        statusRequest: StatusRequest.failure,
+        message: e.toString(),
+      );
+    }
+  }
+
+  Future<ApiResult> subscriptionCourse(InputSubscription input) async {
+    try {
+      await AppSupabase.supabase.client
+          .from(DatabaseTable.subsriptions)
+          .upsert(input.toJson());
+      return ApiSuccess(data: true, statusRequest: StatusRequest.success);
+    } on PostgrestException catch (e) {
+      if (e.message.contains("unique_user_course")) {
+        log('already Subscribed');
+        return ApiFailure(
+          statusRequest: StatusRequest.youAlreadySubscribed,
+          message: "You already Subscribed",
+        );
+      } else {
+        log(e.message.toString());
+        return ApiFailure(
+          statusRequest: StatusRequest.failure,
+          message: e.message.toString(),
+        );
+      }
     } catch (e) {
       log(e.toString());
       return ApiFailure(

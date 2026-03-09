@@ -1,5 +1,6 @@
 import 'package:coursiq/core/constants/app_image.dart';
 import 'package:coursiq/core/constants/app_text.dart';
+import 'package:coursiq/core/helper/local_storage.dart';
 import 'package:coursiq/core/theme/app_color.dart';
 import 'package:coursiq/core/theme/app_textstyle.dart';
 import 'package:flutter/material.dart';
@@ -7,9 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
 class CustomAppbarWidget extends StatelessWidget {
-  const CustomAppbarWidget({
-    super.key,
-  });
+  const CustomAppbarWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +34,7 @@ class CustomAppbarWidget extends StatelessWidget {
                   style: getSmallStyle(color: AppColor.white),
                 ),
                 Text(
-                  "mansour sayed",
+                  LocalStorageApp.getData("name").toString(),
                   style: getBodyStyle(context: context),
                 ),
               ],

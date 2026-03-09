@@ -1,5 +1,6 @@
 import 'package:coursiq/core/theme/app_color.dart';
 import 'package:coursiq/features/home/presentation/screen/home_screen.dart';
+import 'package:coursiq/features/my_courses/presentation/screen/mycourses_screen.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatefulWidget {
@@ -14,7 +15,7 @@ class _MainScreenState extends State<MainScreen> {
   List<Widget> screens = [
     HomeScreen(),
     Center(child: Text("search")),
-    Center(child: Text("data")),
+    MycoursesScreen(),
     Center(child: Text("data2")),
   ];
   @override

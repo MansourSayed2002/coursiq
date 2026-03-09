@@ -32,4 +32,6 @@ class AppText {
   static const String contentCourse = "Content Course";
   static const String price = "Price";
   static const String enrolnNow = "Enroll Now";
+  static const String subscribed = "Subscribed";
+  static const String myCourses = "My Courses";
 }

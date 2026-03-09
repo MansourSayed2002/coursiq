@@ -1,1 +1,8 @@
-enum StatusRequest { none, loading, success, failure, userAlreadyRegistered }
+enum StatusRequest {
+  none,
+  loading,
+  success,
+  failure,
+  userAlreadyRegistered,
+  youAlreadySubscribed,
+}

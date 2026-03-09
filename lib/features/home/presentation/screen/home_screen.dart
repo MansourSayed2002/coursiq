@@ -1,6 +1,5 @@
 import 'package:coursiq/core/constants/app_text.dart';
 import 'package:coursiq/core/di/di.dart';
-import 'package:coursiq/core/theme/app_color.dart';
 import 'package:coursiq/core/theme/app_textstyle.dart';
 import 'package:coursiq/features/home/presentation/cubit/home_cubit.dart';
 import 'package:coursiq/features/home/presentation/widget/banner_widget.dart';
@@ -27,12 +26,6 @@ class HomeScreen extends StatelessWidget {
           preferredSize: Size.fromHeight(70.0.h),
           child: CustomAppbarWidget(),
         ),
-        // floatingActionButton: FloatingActionButton(
-        //   onPressed: () {},
-        //   shape: CircleBorder(),
-        //   backgroundColor: AppColor.accentColor,
-        //   child: Icon(Icons.search, color: AppColor.white),
-        // ),
         body: Padding(
           padding: .symmetric(horizontal: 15.0.w, vertical: 15.0.h),
           child: ListView(

@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'package:coursiq/core/constants/database_table.dart';
 import 'package:coursiq/core/enum/status_request.dart';
 import 'package:coursiq/core/handle_errors/api_result.dart';
+import 'package:coursiq/core/helper/local_storage.dart';
 import 'package:coursiq/core/network/supabase.dart';
 import 'package:coursiq/features/auth/data/model/input_user_model.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -66,11 +67,13 @@ class AuthRepo {
     required String password,
   }) async {
     try {
-      await AppSupabase.supabase.client.auth.signInWithPassword(
+      var result = await AppSupabase.supabase.client.auth.signInWithPassword(
         email: email,
         password: password,
       );
-
+      log(result.user.toString());
+      LocalStorageApp.setSecureStorage("id", result.user?.id.toString() ?? "");
+      LocalStorageApp.saveData("name", result.user?.userMetadata?['fullname']);
       return ApiSuccess(data: "Success", statusRequest: StatusRequest.success);
     } on AuthApiException catch (e) {
       log(e.message.toString());

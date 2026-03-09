@@ -3,5 +3,6 @@ class DatabaseTable {
   static String categories = 'categories';
   static String banner = 'banner';
   static String moduls = 'moduls';
+  static String subsriptions = 'subscriptions';
   static String videoCourse = 'video_course';
 }

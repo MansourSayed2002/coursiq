@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:coursiq/core/handle_errors/api_result.dart';
+import 'package:coursiq/features/details/data/model/input_subscription.dart';
 import 'package:coursiq/features/details/data/model/moduls_model.dart';
 import 'package:coursiq/features/details/data/model/video_model.dart';
 import 'package:coursiq/features/details/data/repo/details_repo.dart';
@@ -28,6 +29,16 @@ class DetailsCubit extends Cubit<DetailsState> {
       emit(DetailsVideoSuccess(video: result.data));
     } else if (result is ApiFailure) {
       emit(DetailsVideoError(message: result.message));
+    }
+  }
+
+  Future<void> subscription(InputSubscription input) async {
+    emit(SubscriptionLoading());
+    var result = await detailsRepo.subscriptionCourse(input);
+    if (result is ApiSuccess) {
+      emit(SubscriptionSuccess());
+    } else if (result is ApiFailure) {
+      emit(SubscriptionError(message: result.message));
     }
   }
 }

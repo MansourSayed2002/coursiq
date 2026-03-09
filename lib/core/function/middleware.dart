@@ -1,6 +1,5 @@
 import 'package:coursiq/core/helper/local_storage.dart';
 import 'package:coursiq/features/auth/presentation/screen/login_screen.dart';
-import 'package:coursiq/features/home/presentation/screen/home_screen.dart';
 import 'package:coursiq/features/main/main_screen.dart';
 import 'package:flutter/widgets.dart';
 

@@ -6,7 +6,7 @@ import 'package:coursiq/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:coursiq/features/auth/presentation/widget/donot_have_account_widget.dart';
 import 'package:coursiq/features/auth/presentation/widget/inputs_body_widget.dart';
 import 'package:coursiq/features/auth/presentation/widget/well_come_widget.dart';
-import 'package:coursiq/features/home/presentation/screen/home_screen.dart';
+import 'package:coursiq/features/main/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -28,7 +28,7 @@ class LoginScreen extends StatelessWidget {
             if (state is AuthSuccess) {
               context.pop();
               LocalStorageApp.saveData("step", "1");
-              context.pushRepalceMent(HomeScreen());
+              context.pushRepalceMent(MainScreen());
             } else if (state is AuthLoading) {
               await loadingWidget(context);
             } else if (state is AuthErrors) {

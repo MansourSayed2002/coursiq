@@ -28,3 +28,12 @@ final class DetailsVideoError extends DetailsState {
   final String message;
   DetailsVideoError({required this.message});
 }
+
+final class SubscriptionLoading extends DetailsState {}
+
+final class SubscriptionSuccess extends DetailsState {}
+
+final class SubscriptionError extends DetailsState {
+  final String message;
+  SubscriptionError({required this.message});
+}
