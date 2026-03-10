@@ -34,4 +34,8 @@ class AppText {
   static const String enrolnNow = "Enroll Now";
   static const String subscribed = "Subscribed";
   static const String myCourses = "My Courses";
+  static const String opps = "Opps!";
+  static const String tryagain = "Try again";
+  static const String returnToTheHomePage = "Return to the homepage";
+  static const String courseSyllabus = "Course Syllabus";
 }

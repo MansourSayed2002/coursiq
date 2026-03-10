@@ -1,20 +1,21 @@
 import 'dart:developer';
-
 import 'package:coursiq/core/enum/status_request.dart';
 import 'package:coursiq/core/handle_errors/api_result.dart';
+import 'package:coursiq/core/helper/local_storage.dart';
 import 'package:coursiq/core/network/supabase.dart';
-import 'package:coursiq/features/my_courses/data/model/mycourse_model.dart';
+import 'package:coursiq/features/video/data/model/videos_model.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-class MycoursesRepo {
-  Future<ApiResult> getMyCourse(String targetID) async {
+class VideoRepo {
+  Future<ApiResult> getVideos({required int targetId}) async {
     try {
+      String userId = await LocalStorageApp.getSecureStorage("id") ?? "";
       List result = await AppSupabase.supabase.client.rpc(
-        "get_my_courses",
-        params: {"p_user_id": targetID},
+        "get_course_videos",
+        params: {"p_course_id": targetId, "p_user_id": userId},
       );
       return ApiSuccess(
-        data: result.map((e) => MycourseModel.fromJson(e)).toList(),
+        data: result.map((e) => VideosCourseModel.fromJson(e)).toList(),
         statusRequest: StatusRequest.success,
       );
     } on PostgrestException catch (e) {

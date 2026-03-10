@@ -1,6 +1,7 @@
 class MycourseModel {
   final int id;
   final String title;
+  final num progress;
   final String description;
   final double price;
   final String imageUrl;
@@ -15,6 +16,7 @@ class MycourseModel {
     required this.imageUrl,
     required this.instructorName,
     required this.instructorPhotoUrl,
+    required this.progress,
   });
 
   // لتحويل من JSON (مفيد لو بتجيب البيانات من API أو Supabase)
@@ -27,6 +29,7 @@ class MycourseModel {
       imageUrl: json['image'] as String,
       instructorName: json['instructor_name'] as String,
       instructorPhotoUrl: json['instructor_photo'] as String,
+      progress: json['progress'] as num,
     );
   }
 
@@ -40,6 +43,7 @@ class MycourseModel {
       'image': imageUrl,
       'instructor_name': instructorName,
       'instructor_photo': instructorPhotoUrl,
+      'progress': progress,
     };
   }
 }
